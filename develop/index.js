@@ -1,66 +1,77 @@
+function init() {
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-// add generateMarkdown.js
+const generate = require("./develop/generateMarkdown.js");
+
 
 // TODO: Create an array of questions for user input
-const questions = [{
+inquirer
+    .prompt([
+        {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'What is the title for your project?',
+    name: 'title',
+        },
+
+{
+    type: 'input',
+    message: 'Write a descirption of your project.',
+    name: 'description',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'Provide a step by step explanation on how to install your project.',
+    name: 'install',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'Provide a link to your project.',
+    name: 'link',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'What is your Github username?',
+    name: 'github',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'What is your email address?',
+    name: 'email',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'Provide instructions on how to run your project.',
+    name: 'instructions',
+},
+
+{
+    type: 'list',
+    message: 'What license did you use for your project?',
+    choices: ["MIT", "GNU", "Apache", "Academic", "ISC", "Mozilla", "Open", "No License"],
+    name: 'license',
 },
 
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'How can people contribute to your project?',
+    name: 'contribute',
 },
-
 {
     type: 'input',
-    name: '',
-    message: '',
+    message: 'If there are any collaborators that also worked on your project list their Github usernames.',
+    name: 'collaborators'
 },
-
-{
-
-}];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
+    ]);
+    .then((response) => {
+        return fs.writeFileSync(path.join (process.cwd(), "README.md"), generate(response));
+    });
+}
 
 // Function call to initialize app
 init();
