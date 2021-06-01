@@ -1,11 +1,10 @@
 function init() {
-// TODO: Include packages needed for this application
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generate = require("./develop/generateMarkdown.js");
 
 
-// TODO: Create an array of questions for user input
 inquirer
     .prompt([
         {
@@ -73,5 +72,4 @@ inquirer
     });
 }
 
-// Function call to initialize app
 init();
