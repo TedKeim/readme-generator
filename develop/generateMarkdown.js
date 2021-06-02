@@ -24,7 +24,34 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+    if (license === 'MIT') {
+        
+        return'Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)'
+      }
+
+      if (license === 'Apache') {
+    
+        return'Licensed under the [Apache License](https://choosealicense.com/licenses/apache-2.0/)'
+      }
+
+      if (license === 'GPLv2') {
+    
+        return'Licensed under the [GPLv2 License](https://choosealicense.com/licenses/gpl-2.0/)'
+      }
+
+      if (license === 'GPLv3') {
+
+          return'Licensed under the [GPLv3 License] (https://choosealicense.com/licenses/gpl-3.0/)
+      }
+      
+      
+      if (license === 'none') {
+        
+        return ''
+      }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
