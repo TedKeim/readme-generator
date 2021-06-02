@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
     }
 
     if (license === "GPLv3") {
-        return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+        return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)'
     }
 
     if (license === 'none') {
@@ -43,7 +43,7 @@ function renderLicenseLink(license) {
 
       if (license === 'GPLv3') {
 
-          return'Licensed under the [GPLv3 License] (https://choosealicense.com/licenses/gpl-3.0/)
+          return'Licensed under the [GPLv3 License] (https://choosealicense.com/licenses/gpl-3.0/)'
       }
       
       
@@ -109,9 +109,7 @@ ${renderLicenseLink(data.license)}
   ${data.constribute}
 
   ## Collaborators
-  ${data.collaborators}
-
-`;
+  ${data.collaborators}`
 }
 
 module.exports = generateMarkdown;

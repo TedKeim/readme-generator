@@ -2,7 +2,7 @@ function init () {
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generate = require("./develop/generateMarkdown.js");
+const generate = require("./generateMarkdown");
 const path = require('path');
 
 inquirer
