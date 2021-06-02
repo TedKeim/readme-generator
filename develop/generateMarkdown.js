@@ -27,7 +27,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
 
     if (license === 'MIT') {
-        
+
         return'Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)'
       }
 
@@ -55,11 +55,61 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+    if (license === 'MIT' || license === "Apache" || license === "GPLv2" || license === "GPLv3") {
+        return '## License:'
+    } else {
+        return ""
+    }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+${renderLicenseBadge(data.license)}
+${renderLicenseSection(data.license)}
+${renderLicenseLink(data.license)}
+
+
+  ## Table of Contents:
+  1. [Title] (#title)
+  2. [Description] (#description)
+  3. [Installation] (#install)
+  4. [Link] (#link)
+  5. [Github] (#github)
+  6. [E-mail] (#Email)
+  7. [Instructions] (#instructions)
+  8. [License] (#license)
+  9. [Contribution] (#contribute)
+  10. [Collaborators] (#collaborators)
+
+  ## Title
+  ${data.title}
+
+  ## Description
+  ${data.description}
+
+  ## Installation
+  ${data.install}
+
+  ## Link
+  ${data.link}
+
+  ## Github
+  ${data.github}
+
+  ## E-mail
+  ${data.email}
+
+  ## Instructions
+  ${data.instructions}
+
+  ## Contribution
+  ${data.constribute}
+
+  ## Collaborators
+  ${data.collaborators}
 
 `;
 }
