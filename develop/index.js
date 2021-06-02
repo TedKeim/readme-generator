@@ -52,7 +52,7 @@ inquirer
 {
     type: 'list',
     message: 'What license did you use for your project?',
-    choices: ["MIT", "GNU", "Apache", "Academic", "ISC", "Mozilla", "Open", "No License"],
+    choices: ["MIT", "Apache", "GPLv2", "GPLv3", "none"],
     name: 'license',
 },
 
