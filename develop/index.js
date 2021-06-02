@@ -1,9 +1,9 @@
-function init() {
+function init () {
 
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generate = require("./develop/generateMarkdown.js");
-
+const path = require('path');
 
 inquirer
     .prompt([
@@ -11,7 +11,7 @@ inquirer
     type: 'input',
     message: 'What is the title for your project?',
     name: 'title',
-        },
+},
 
 {
     type: 'input',
@@ -66,7 +66,8 @@ inquirer
     message: 'If there are any collaborators that also worked on your project list their Github usernames.',
     name: 'collaborators'
 },
-    ]);
+
+    ])
     .then((response) => {
         return fs.writeFileSync(path.join (process.cwd(), "README.md"), generate(response));
     });
